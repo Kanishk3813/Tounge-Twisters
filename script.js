@@ -48,9 +48,15 @@ const tongueTwisters = [
     const nextbtn = document.getElementById("nextbtn");
   
     function displayTwister(index) {
-      text.textContent = tongueTwisters[index].twister;
+      const twisterObj = tongueTwisters[index];
+      const twisterText = twisterObj.twister;
+      const difficulty = twisterObj.difficulty;
+      
+      document.getElementById("tongueTwister").textContent = twisterText;
+      document.getElementById("difficultyText").textContent = "Difficulty: " + difficulty;
     }
-  
+    
+    
     prevbtn.addEventListener("click", () => {
     if (activeIndex > 0) {
       activeIndex--;
